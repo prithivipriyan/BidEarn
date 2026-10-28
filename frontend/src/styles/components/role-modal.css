@@ -1,0 +1,187 @@
+/* ==========================================================================
+   Role Selection Modal Styles (src/styles/components/role-modal.css)
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 33, 27, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: modalFadeIn 0.25s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-container {
+  width: 100%;
+  max-width: 540px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(43, 33, 27, 0.22);
+  position: relative;
+  overflow: hidden;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(20px) scale(0.96); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2rem 2rem 1.25rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  pointer-events: auto;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: rgba(163, 58, 50, 0.1);
+  border-color: var(--accent-rose);
+  color: var(--accent-rose);
+  transform: rotate(90deg) scale(1.08);
+}
+
+.modal-title {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.modal-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Role Selection Cards */
+.role-options {
+  padding: 0.75rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.role-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: left;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.role-card:hover {
+  background: #FAF9F6;
+  border-color: var(--accent-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(74, 44, 26, 0.1);
+}
+
+.role-card-admin:hover {
+  background: #FAF9F6;
+  border-color: var(--secondary);
+  box-shadow: 0 10px 25px rgba(122, 75, 42, 0.1);
+}
+
+.role-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(74, 44, 26, 0.08);
+  border: 1px solid rgba(74, 44, 26, 0.2);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
+}
+
+.role-card-admin .role-icon-box {
+  background: rgba(196, 154, 74, 0.15);
+  border-color: rgba(196, 154, 74, 0.35);
+  color: var(--secondary);
+}
+
+.role-card:hover .role-icon-box {
+  transform: scale(1.1);
+}
+
+.role-info {
+  flex: 1;
+}
+
+.role-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.role-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.role-badge {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.role-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.role-arrow {
+  color: var(--text-dim);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.role-card:hover .role-arrow {
+  transform: translateX(4px);
+  color: var(--primary);
+}

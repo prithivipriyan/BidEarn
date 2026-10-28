@@ -1,0 +1,280 @@
+/* ==========================================================================
+   Auth Pages Styles: Login, Register & Forgot Password
+   (src/styles/pages/auth.css)
+   ========================================================================== */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(196, 154, 74, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(122, 75, 42, 0.08) 0%, transparent 50%);
+  position: relative;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 520px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 20px 50px rgba(74, 44, 26, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.auth-card-wide {
+  max-width: 640px;
+}
+
+/* Header */
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  background: rgba(74, 44, 26, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(74, 44, 26, 0.2);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.auth-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+
+.auth-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Role Toggle Pill */
+.auth-role-toggle {
+  display: flex;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 0.3rem;
+  margin-bottom: 1.75rem;
+}
+
+.auth-role-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.auth-role-btn.active {
+  background: var(--btn-deep-brown);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(92, 53, 30, 0.25);
+}
+
+.auth-role-btn.active.admin-active {
+  background: var(--secondary);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(122, 75, 42, 0.25);
+}
+
+/* Forms & Inputs */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(196, 154, 74, 0.2);
+}
+
+.input-action-btn {
+  position: absolute;
+  right: 0.85rem;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  transition: color var(--transition-fast);
+}
+.input-action-btn:hover {
+  color: var(--primary);
+}
+
+/* Helper & Forgot Password Link */
+.form-helper-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.86rem;
+}
+
+.forgot-link {
+  color: var(--secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.forgot-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Alerts */
+.auth-alert {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.auth-alert-error {
+  background: rgba(163, 58, 50, 0.1);
+  border: 1px solid rgba(163, 58, 50, 0.3);
+  color: var(--accent-rose);
+}
+
+.auth-alert-success {
+  background: rgba(46, 107, 69, 0.1);
+  border: 1px solid rgba(46, 107, 69, 0.3);
+  color: var(--accent-emerald);
+}
+
+/* Submit Button */
+.auth-submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer Link */
+.auth-footer {
+  text-align: center;
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.auth-link {
+  color: var(--secondary);
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.35rem;
+}
+.auth-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Back Link */
+.auth-back-btn {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+.auth-back-btn:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .auth-card {
+    padding: 1.75rem 1.25rem;
+  }
+}

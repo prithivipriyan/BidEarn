@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Bid Modal Component Styles (src/styles/components/bid-modal.css)
+   ========================================================================== */
+
+.bid-modal-container {
+  width: 100%;
+  max-width: 480px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(43, 33, 27, 0.22);
+  overflow: hidden;
+  position: relative;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.bid-modal-header {
+  padding: 1.5rem 1.75rem 1rem 1.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bid-modal-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-main);
+}
+
+.bid-modal-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bid-item-preview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem;
+  background: #FAF9F6;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.bid-item-thumb {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.bid-item-details h4 {
+  font-size: 0.98rem;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.bid-item-details p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.bid-quick-increments {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.increment-btn {
+  padding: 0.55rem;
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.increment-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--accent-gold);
+  color: var(--primary);
+}
+
+.bid-modal-footer {
+  padding: 1.25rem 1.75rem;
+  background: #FAF9F6;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  gap: 0.75rem;
+}
+
+.bid-modal-footer .btn {
+  flex: 1;
+}
